@@ -1,6 +1,6 @@
 ﻿| AppVeyor | Coveralls | Download |
 | :------: | :-------: | :------: |
-| [![Build status](https://ci.appveyor.com/api/projects/status/n5gn3nl5pyt4ajiw?svg=true)](https://ci.appveyor.com/project/nicholasdille/powershell-helper) | [![Coverage Status](https://coveralls.io/repos/github/nicholasdille/PowerShell-Helper/badge.svg?branch=master)](https://coveralls.io/github/nicholasdille/PowerShell-Helper?branch=master) | [![Download](https://img.shields.io/badge/powershellgallery-Helper-blue.svg)](https://www.powershellgallery.com/packages/Helper/) 
+| [![Build status](https://ci.appveyor.com/api/projects/status/xo7yxyqqskopeba7?svg=true)](https://ci.appveyor.com/project/nicholasdille/powershell-helpers) | [![Coverage Status](https://coveralls.io/repos/github/nicholasdille/PowerShell-Helpers/badge.svg?branch=master)](https://coveralls.io/github/nicholasdille/PowerShell-Helpers?branch=master) | [![Download](https://img.shields.io/badge/powershellgallery-Helpers-blue.svg)](https://www.powershellgallery.com/packages/Helpers/) 
 
 # Introduction
 
