@@ -6,7 +6,7 @@
     )]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
         "PSAvoidUsingPlainTextForPassword", 
-        "", 
+        "CredentialName", 
         Justification = "CredentialName only refers to an entry in CredentialStore"
     )]
     <#

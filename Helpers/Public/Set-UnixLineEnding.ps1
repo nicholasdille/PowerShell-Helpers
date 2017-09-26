@@ -30,7 +30,7 @@
             $NormalizedContent = [System.Text.Encoding]::ASCII.GetString($NormalizedBytes)
             #$NormalizedContent
 
-            if ($Force -or $PSCmdlet.ShouldProcess("ShouldProcess?")) {
+            if ($Force -or $PSCmdlet.ShouldProcess("Overwrite file '$FilePath'?")) {
                 Set-Content -Value $NormalizedContent -Path $FilePath
             }
         }

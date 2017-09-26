@@ -24,7 +24,7 @@ function Remove-DefaultParameterValue {
     }
     
     process {
-        if ($Force -or $PSCmdlet.ShouldProcess("ShouldProcess?")) {
+        if ($Force -or $PSCmdlet.ShouldProcess("Remove parameter '$ParameterName' from cmdlet '$CmdletName'?")) {
             $PSDefaultParameterValues.Remove("$($CmdletName):$ParameterName")
         }
     }

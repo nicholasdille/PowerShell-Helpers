@@ -1,7 +1,7 @@
 Function New-Password() {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
         "PSUseDeclaredVarsMoreThanAssignments", 
-        "", 
+        "Alphabet", 
         Justification = "Parsing error in script analyzer"
     )]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(

@@ -1,7 +1,12 @@
 function New-CredentialInStore {
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
         "PSAvoidUsingPlainTextForPassword", 
-        "", 
+        "CredentialName", 
+        Justification = "CredentialName only refers to an entryin CredentialStore"
+    )]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSAvoidUsingPlainTextForPassword", 
+        "CredentialStore", 
         Justification = "CredentialName only refers to an entryin CredentialStore"
     )]
     [Diagnostics.CodeAnalysis.SuppressMessageAttribute(

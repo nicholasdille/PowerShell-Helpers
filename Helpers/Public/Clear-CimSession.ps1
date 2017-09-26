@@ -1,8 +1,21 @@
 ﻿function Clear-CimSession {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess, ConfirmImpact='Medium')]
     param()
+    
+    begin {
+        if (-not $PSBoundParameters.ContainsKey('Confirm')) {
+            $ConfirmPreference = $PSCmdlet.SessionState.PSVariable.GetValue('ConfirmPreference')
+        }
+        if (-not $PSBoundParameters.ContainsKey('WhatIf')) {
+            $WhatIfPreference = $PSCmdlet.SessionState.PSVariable.GetValue('WhatIfPreference')
+        }
+    }
 
-    Get-Command -ParameterName CimSession | Select-Object -ExpandProperty Name | ForEach-Object {
-        $PSDefaultParameterValues."$_:CimSession" = $null
+    process {
+        if ($Force -or $PSCmdlet.ShouldProcess("Remove CimSession parameter from cmdlets?")) {
+            Get-Command -ParameterName CimSession | Select-Object -ExpandProperty Name | ForEach-Object {
+                $PSDefaultParameterValues."$_:CimSession" = $null
+            }
+        }
     }
 }
