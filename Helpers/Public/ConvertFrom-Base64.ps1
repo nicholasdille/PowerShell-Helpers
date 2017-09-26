@@ -16,7 +16,7 @@ function ConvertFrom-Base64 {
     Process {
         foreach ($Item in $Data) {
             $bytes = [System.Convert]::FromBase64String($Item)
-            ConvertFrom-Bytes -Data $bytes -Encoding $Encoding
+            ConvertFrom-ByteArray -Data $bytes -Encoding $Encoding
         }
     }
 }
