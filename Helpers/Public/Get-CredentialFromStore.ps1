@@ -1,4 +1,9 @@
 function Get-CredentialFromStore {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSAvoidUsingPlainTextForPassword", 
+        "", 
+        Justification = "CredentialName only refers to an entryin CredentialStore"
+    )]
     [CmdletBinding()]
     [OutputType([pscredential])]
     param(

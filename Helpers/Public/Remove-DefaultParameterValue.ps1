@@ -1,5 +1,5 @@
 function Remove-DefaultParameterValue {
-    [CmdletBinding()]
+    [CmdletBinding(SupportsShouldProcess, ConfirmImpact='Low')]
     param(
         [Parameter(Mandatory)]
         [Alias('Name')]
@@ -13,8 +13,19 @@ function Remove-DefaultParameterValue {
         [string]
         $ParameterName
     )
-
-    PROCESS {
-        $PSDefaultParameterValues.Remove("$($CmdletName):$ParameterName")
+    
+    begin {
+        if (-not $PSBoundParameters.ContainsKey('Confirm')) {
+            $ConfirmPreference = $PSCmdlet.SessionState.PSVariable.GetValue('ConfirmPreference')
+        }
+        if (-not $PSBoundParameters.ContainsKey('WhatIf')) {
+            $WhatIfPreference = $PSCmdlet.SessionState.PSVariable.GetValue('WhatIfPreference')
+        }
+    }
+    
+    process {
+        if ($Force -or $PSCmdlet.ShouldProcess("ShouldProcess?")) {
+            $PSDefaultParameterValues.Remove("$($CmdletName):$ParameterName")
+        }
     }
 }

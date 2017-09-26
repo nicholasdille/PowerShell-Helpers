@@ -5,8 +5,8 @@
         [Parameter(Mandatory,ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
         [string]
-        $Password
+        $Hash
     )
 
-    return ConvertFrom-Base64 -Data $Password
+    ConvertFrom-Base64 -Data $Hash
 }

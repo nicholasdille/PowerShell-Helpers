@@ -4,9 +4,9 @@ function ConvertTo-UnattendXmlPassword {
     param(
         [Parameter(Mandatory,ValueFromPipeline)]
         [ValidateNotNullOrEmpty()]
-        [string]
+        [securestring]
         $Password
     )
 
-    return ConvertTo-Base64 -Data $Password
+    ConvertTo-Base64 -Data (Get-PlaintextFromSecureString -SecureString $Password)
 }

@@ -1,4 +1,9 @@
 function Set-Credential {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Only changes default parameters for remoting cmdlets"
+    )]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory,ParameterSetName='CredentialName')]

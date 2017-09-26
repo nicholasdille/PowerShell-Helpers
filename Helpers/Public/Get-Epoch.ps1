@@ -1,7 +1,7 @@
 function Get-Epoch {
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory)]
+        [Parameter()]
         [ValidateNotNullOrEmpty()]
         [datetime]
         $Timestamp = ([datetime]::UtcNow)

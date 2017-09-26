@@ -1,4 +1,14 @@
 ﻿function New-SimpleCimSession {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Object is only created in memory"
+    )]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSAvoidUsingPlainTextForPassword", 
+        "", 
+        Justification = "CredentialName only refers to an entry in CredentialStore"
+    )]
     <#
     .SYNOPSIS
     XXX

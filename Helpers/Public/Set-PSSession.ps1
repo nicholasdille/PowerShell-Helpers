@@ -1,4 +1,9 @@
 function Set-PSSession {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Only changes default parameters for session cmdlets"
+    )]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory,ParameterSetName='CredentialName')]

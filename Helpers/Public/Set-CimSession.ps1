@@ -1,4 +1,9 @@
 function Set-CimSession {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Only changes default parameters for CIM cmdlets"
+    )]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory,ParameterSetName='CredentialName')]

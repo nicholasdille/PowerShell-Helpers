@@ -1,4 +1,14 @@
 function New-CredentialInStore {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSAvoidUsingPlainTextForPassword", 
+        "", 
+        Justification = "CredentialName only refers to an entryin CredentialStore"
+    )]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Only imports credentials from a file to memory"
+    )]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]

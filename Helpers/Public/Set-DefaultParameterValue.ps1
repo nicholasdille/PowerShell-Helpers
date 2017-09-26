@@ -1,4 +1,9 @@
 function Set-DefaultParameterValue {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Only default parameters are changed"
+    )]
     [CmdletBinding()]
     param(
         [Parameter(Mandatory)]

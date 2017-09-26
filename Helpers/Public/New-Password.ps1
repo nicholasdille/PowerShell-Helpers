@@ -1,4 +1,14 @@
 Function New-Password() {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseDeclaredVarsMoreThanAssignments", 
+        "", 
+        Justification = "Parsing error in script analyzer"
+    )]
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSUseShouldProcessForStateChangingFunctions", 
+        "", 
+        Justification = "Object is only created in memory"
+    )]
     <#
     .SYNOPSIS
     Generates a new password

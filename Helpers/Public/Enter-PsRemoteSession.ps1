@@ -1,4 +1,9 @@
 function Enter-PsRemoteSession {
+    [Diagnostics.CodeAnalysis.SuppressMessageAttribute(
+        "PSAvoidUsingPlainTextForPassword", 
+        "", 
+        Justification = "CredentialName only specifies an entry in the credential database"
+    )]
     <#
     .SYNOPSIS
     XXX
