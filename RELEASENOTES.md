@@ -1,6 +1,6 @@
 # Release Notes
 
-## 0.3.0.18
+## 0.3.0.19
 
 - Added `ConvertTo-UnixEpoch` to convert a `[datetime]` to a unix epoch in nanoseconds
 - Added `Expand-GzipArchive` and `Import-GzipArchive` to write to a file and the pipeline, respectively
