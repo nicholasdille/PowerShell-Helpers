@@ -1,5 +1,12 @@
 # Release Notes
 
+## 0.3.0.18
+
+- Added `ConvertTo-UnixEpoch` to convert a `[datetime]` to a unix epoch in nanoseconds
+- Added `Expand-GzipArchive` and `Import-GzipArchive` to write to a file and the pipeline, respectively
+- Added `ConvertFrom-CommonLog` to parse web logs in common log format
+- Added `ConvertFrom-CloudFrontExtendedLog` to parse [logs provided by AWS CloudFront](https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html#BasicDistributionFileFormat)
+
 ## 0.2.1.17
 
 - Updated for new formt of release notes

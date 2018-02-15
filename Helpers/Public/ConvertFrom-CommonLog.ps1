@@ -1,4 +1,4 @@
-function ConvertFrom-HttpAccessLog {
+function ConvertFrom-CommonLog {
     [Cmdletbinding()]
     param(
         [Parameter(Mandatory, ValueFromPipeline)]
@@ -17,7 +17,7 @@ function ConvertFrom-HttpAccessLog {
         foreach ($Line in $InputObject) {
 
             # Check if a single line matches the follow regex
-            if ($Line -match 
+            if ($Line -match
                         '(?x)
                         ^                                                  # Beginning of the line
                         (?<SourceIp>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})    # IP address
@@ -39,20 +39,20 @@ function ConvertFrom-HttpAccessLog {
 
                 # Creating a hashtable with a basic set of fields
                 $LogObject = @{
-                    SourceIp     = $Matches[1]
-                    Timestamp    = [datetime]::ParseExact($Matches[4], 'dd/MMM/yyyy:HH:mm:ss zz00', [System.Globalization.CultureInfo]::InvariantCulture)
-                    Request      = $Matches[5]
-                    Code         = $Matches[6]
+                    SourceIp     = $Matches['SourceIp']
+                    Timestamp    = [datetime]::ParseExact($Matches['Timestamp'], 'dd/MMM/yyyy:HH:mm:ss zz00', [System.Globalization.CultureInfo]::InvariantCulture)
+                    Request      = $Matches['Request']
+                    Code         = $Matches['Code']
                 }
 
                 # Checking if a user was authenticated using HTTP
-                if ($Matches[3] -ne '-') {
-                    $LogObject.Add('User', $Matches[3])
+                if ($Matches['User'] -ne '-') {
+                    $LogObject.Add('User', $Matches['User'])
                 }
 
                 # Checking of the response has a size
-                if ($Matches[7] -ne '-') {
-                    $LogObject.Add('Size', $Matches[7])
+                if ($Matches['Size'] -ne '-') {
+                    $LogObject.Add('Size', $Matches['Size'])
                 }
 
                 # Checking if the source IP was already resolved to a name
