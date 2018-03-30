@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.4.0.22
+
+- GitHub requires TLS 1.2 now
+- Added `Get-BasicAuthentication` to enable authenticated web requests without WebRequest module
+
 ## 0.3.0.19
 
 - Added `ConvertTo-UnixEpoch` to convert a `[datetime]` to a unix epoch in nanoseconds
