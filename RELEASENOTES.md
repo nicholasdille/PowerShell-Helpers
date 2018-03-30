@@ -1,6 +1,6 @@
 # Release Notes
 
-## 0.4.0.22
+## 0.4.0.23
 
 - GitHub requires TLS 1.2 now
 - Added `Get-BasicAuthentication` to enable authenticated web requests without WebRequest module
